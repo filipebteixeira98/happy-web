@@ -1,18 +1,19 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { Map, Marker, TileLayer } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
-import { useNavigate } from 'react-router-dom';
-
+import { useHistory } from 'react-router-dom';
 import { FiPlus } from 'react-icons/fi';
 
 import Sidebar from '../components/Sidebar';
-import mapIcon from '../utils/mapIcon';
+
 import api from '../services/api';
+
+import mapIcon from '../utils/mapIcon';
 
 import '../styles/pages/create-orphanage.css';
 
 export default function OrphanagesMap() {
-  const navigate = useNavigate();
+  const history = useHistory();
 
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
 
@@ -72,7 +73,7 @@ export default function OrphanagesMap() {
 
     alert('Cadastro realizado com sucesso!');
 
-    navigate('/app');
+    history.push('/app');
   }
 
   return (
