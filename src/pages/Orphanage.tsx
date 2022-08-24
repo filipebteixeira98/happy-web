@@ -42,7 +42,7 @@ export default function Orphanage() {
   }, [params.id]);
 
   if (!orphanage) {
-    return <p>Carregando...</p>;
+    return <p>Loading...</p>;
   }
 
   return (
@@ -102,40 +102,40 @@ export default function Orphanage() {
                   rel="noopener noreferrer"
                   href={`https://www.google.com/maps/dir/?api=1&destination=${orphanage.latitude},${orphanage.longitude}`}
                 >
-                  Ver rotas no Google Maps
+                  See directions on Google Maps
                 </a>
               </footer>
             </div>
 
             <hr />
 
-            <h2>Instruções para visita</h2>
+            <h2>Visiting instructions</h2>
             <p>{orphanage.instructions}</p>
 
             <div className="open-details">
               <div className="hour">
                 <FiClock size={32} color="#15B6D6" />
-                Segunda à Sexta <br />
+                Monday to Friday <br />
                 {orphanage.opening_hours}
               </div>
               {orphanage.open_on_weekends ? (
                 <div className="open-on-weekends">
                   <FiInfo size={32} color="#39CC83" />
-                  Atendemos <br />
-                  fim de semana
+                  Open <br />
+                  on weekends
                 </div>
               ) : (
                 <div className="open-on-weekends dont-open">
                   <FiInfo size={32} color="#FF6690" />
-                  Não Atendemos <br />
-                  fim de semana
+                  Closed <br />
+                  on weekends
                 </div>
               )}
             </div>
 
             {/* <button type="button" className="contact-button">
               <FaWhatsapp size={20} color="#FFF" />
-              Entrar em contato
+              Get in touch with us
             </button> */}
           </div>
         </div>

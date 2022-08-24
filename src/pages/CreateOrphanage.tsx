@@ -71,7 +71,7 @@ export default function OrphanagesMap() {
 
     await api.post('orphanages', data);
 
-    alert('Cadastro realizado com sucesso!');
+    alert('Registration successful!');
 
     history.push('/app');
   }
@@ -82,7 +82,7 @@ export default function OrphanagesMap() {
       <main>
         <form onSubmit={handleSubmit} className="create-orphanage-form">
           <fieldset>
-            <legend>Dados</legend>
+            <legend>Informations</legend>
 
             <Map
               center={[-27.2092052, -49.6401092]}
@@ -104,7 +104,7 @@ export default function OrphanagesMap() {
             </Map>
 
             <div className="input-block">
-              <label htmlFor="name">Nome</label>
+              <label htmlFor="name">Name</label>
               <input
                 id="name"
                 value={name}
@@ -114,7 +114,7 @@ export default function OrphanagesMap() {
 
             <div className="input-block">
               <label htmlFor="about">
-                Sobre <span>Máximo de 300 caracteres</span>
+                About <span>Maximum of 300 characters</span>
               </label>
               <textarea
                 id="name"
@@ -125,7 +125,7 @@ export default function OrphanagesMap() {
             </div>
 
             <div className="input-block">
-              <label htmlFor="images">Fotos</label>
+              <label htmlFor="images">Photos</label>
 
               <div className="images-container">
                 {previewImages.map((image) => (
@@ -147,10 +147,10 @@ export default function OrphanagesMap() {
           </fieldset>
 
           <fieldset>
-            <legend>Visitação</legend>
+            <legend>Visitation</legend>
 
             <div className="input-block">
-              <label htmlFor="instructions">Instruções</label>
+              <label htmlFor="instructions">Instructions</label>
               <textarea
                 id="instructions"
                 value={instructions}
@@ -159,7 +159,7 @@ export default function OrphanagesMap() {
             </div>
 
             <div className="input-block">
-              <label htmlFor="opening_hours">Horário de funcinamento</label>
+              <label htmlFor="opening_hours">Opening hours</label>
               <input
                 id="opening_hours"
                 value={opening_hours}
@@ -168,7 +168,7 @@ export default function OrphanagesMap() {
             </div>
 
             <div className="input-block">
-              <label htmlFor="open_on_weekends">Atende fim de semana</label>
+              <label htmlFor="open_on_weekends">Open on weekends</label>
 
               <div className="button-select">
                 <button
@@ -176,21 +176,21 @@ export default function OrphanagesMap() {
                   className={open_on_weekends ? 'active' : ''}
                   onClick={() => setOpenOnWeekends(true)}
                 >
-                  Sim
+                  Yes
                 </button>
                 <button
                   type="button"
                   className={!open_on_weekends ? 'active' : ''}
                   onClick={() => setOpenOnWeekends(false)}
                 >
-                  Não
+                  No
                 </button>
               </div>
             </div>
           </fieldset>
 
           <button className="confirm-button" type="submit">
-            Confirmar
+            Confirm
           </button>
         </form>
       </main>
